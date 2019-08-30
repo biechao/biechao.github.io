@@ -7,13 +7,13 @@
   
   <title>如何用vue-cli 3.0 打包一个组件并发布到NPM站点 | 毛毛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用VUE有一段时间了，但还从来没用过类似iview或者或者elementUI这样的库，一方面样式与公司的不相符，一方面我们公司的页面相对简单。最主要的还是自己写组件的话可以更好的理解和学习VUE，在公司写的组件也不少了，就想着能不能自己也把这些组件发布出来，方便自己以后使用。琢磨了半天，总算发布出去了，这里记录一下发布的过程，怕以后又忘了。 1.安装nodeJS下载nodeJS安装包并按照提示安装">
+  <meta name="description" content="用VUE有一段时间了，但还从来没用过类似iview或者或者elementUI这样的库，一方面样式与公司的不相符，一方面公司的页面相对简单。最主要的还是自己写组件的话可以更好的理解和学习VUE，在公司写的组件也不少了，就想着能不能自己也把这些组件发布出来，方便自己以后使用。琢磨了半天，总算发布出去了，这里记录一下发布的过程，怕以后又忘了。 1.安装nodeJS下载nodeJS安装包并按照提示安装，安">
 <meta name="keywords" content="vue-cli 3.0 NPM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何用vue-cli 3.0 打包一个组件并发布到NPM站点">
 <meta property="og:url" content="http://yoursite.com/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/index.html">
 <meta property="og:site_name" content="毛毛">
-<meta property="og:description" content="用VUE有一段时间了，但还从来没用过类似iview或者或者elementUI这样的库，一方面样式与公司的不相符，一方面我们公司的页面相对简单。最主要的还是自己写组件的话可以更好的理解和学习VUE，在公司写的组件也不少了，就想着能不能自己也把这些组件发布出来，方便自己以后使用。琢磨了半天，总算发布出去了，这里记录一下发布的过程，怕以后又忘了。 1.安装nodeJS下载nodeJS安装包并按照提示安装">
+<meta property="og:description" content="用VUE有一段时间了，但还从来没用过类似iview或者或者elementUI这样的库，一方面样式与公司的不相符，一方面公司的页面相对简单。最主要的还是自己写组件的话可以更好的理解和学习VUE，在公司写的组件也不少了，就想着能不能自己也把这些组件发布出来，方便自己以后使用。琢磨了半天，总算发布出去了，这里记录一下发布的过程，怕以后又忘了。 1.安装nodeJS下载nodeJS安装包并按照提示安装，安">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/2.png">
@@ -21,10 +21,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/4.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/5.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/6.png">
-<meta property="og:updated_time" content="2019-08-30T08:21:18.221Z">
+<meta property="og:updated_time" content="2019-08-30T09:22:16.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何用vue-cli 3.0 打包一个组件并发布到NPM站点">
-<meta name="twitter:description" content="用VUE有一段时间了，但还从来没用过类似iview或者或者elementUI这样的库，一方面样式与公司的不相符，一方面我们公司的页面相对简单。最主要的还是自己写组件的话可以更好的理解和学习VUE，在公司写的组件也不少了，就想着能不能自己也把这些组件发布出来，方便自己以后使用。琢磨了半天，总算发布出去了，这里记录一下发布的过程，怕以后又忘了。 1.安装nodeJS下载nodeJS安装包并按照提示安装">
+<meta name="twitter:description" content="用VUE有一段时间了，但还从来没用过类似iview或者或者elementUI这样的库，一方面样式与公司的不相符，一方面公司的页面相对简单。最主要的还是自己写组件的话可以更好的理解和学习VUE，在公司写的组件也不少了，就想着能不能自己也把这些组件发布出来，方便自己以后使用。琢磨了半天，总算发布出去了，这里记录一下发布的过程，怕以后又忘了。 1.安装nodeJS下载nodeJS安装包并按照提示安装，安">
 <meta name="twitter:image" content="http://yoursite.com/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/1.png">
   
     <link rel="alternate" href="/atom.xml" title="毛毛" type="application/atom+xml">
@@ -94,7 +94,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>用VUE有一段时间了，但还从来没用过类似iview或者或者elementUI这样的库，一方面样式与公司的不相符，一方面我们公司的页面相对简单。<br>最主要的还是自己写组件的话可以更好的理解和学习VUE，在公司写的组件也不少了，就想着能不能自己也把这些组件发布出来，方便自己以后使用。<br>琢磨了半天，总算发布出去了，这里记录一下发布的过程，怕以后又忘了。</p>
+        <p>用VUE有一段时间了，但还从来没用过类似iview或者或者elementUI这样的库，一方面样式与公司的不相符，一方面公司的页面相对简单。<br>最主要的还是自己写组件的话可以更好的理解和学习VUE，在公司写的组件也不少了，就想着能不能自己也把这些组件发布出来，方便自己以后使用。<br>琢磨了半天，总算发布出去了，这里记录一下发布的过程，怕以后又忘了。</p>
 <h2 id="1-安装nodeJS"><a href="#1-安装nodeJS" class="headerlink" title="1.安装nodeJS"></a>1.安装nodeJS</h2><p>下载nodeJS安装包并按照提示安装，安装之后输入一下命令检查是否安装正确。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">v10.16.4</span><br></pre></td></tr></table></figure>
 
@@ -105,7 +105,7 @@
 
 <p>为了简单方便，命令行使用默认方式安装</p>
 <img src="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/1.png" title="命令行安装">
-<p>安装按成之后运行</p>
+<p>安装完成之后运行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
 
 <p>运行结束之后会看到如下的输出，这个时候就可以通过localhost:8080来访问这个项目了</p>
@@ -113,7 +113,7 @@
 <p>项目初始化的目录结构如下，没错没有webpack.config.js,因为在vue-cli 3.0里面通过vue.config.js文件来设置webpack的相关配置，后面会讲到。</p>
 <img src="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/3.png" title="代码目录">
 <p>到此为止准备工作就算结束了。</p>
-<h2 id="4-开始构建自己的组件代码"><a href="#4-开始构建自己的组件代码" class="headerlink" title="4.开始构建自己的组件代码"></a>4.开始构建自己的组件代码</h2><p>按照惯例(我也不知道为啥大家都要这么做)，添加packages目录存放自己的组件代码，修改src目录为examples表明这个目录是用来演示组件是如何使用的，<br>因为我们要打包的仅仅是组件而已。<br>修改src目录前记得先停掉npm serve，不然文件占用无法修改。<br>在packages目录下添加自己的组件目录my-first-components.<br>在my-first-conponents目录下新建src目录，并在src目录下新建my-first-components.vue文件。<br>回到src目录，新建index.js文件用户export这个组件<br>回到packages目录下，新建index.js文件，这个文件负责export所有的组件，因为我们可以将多个组件一起打包出来<br>还有重要的一点，修改我们修改的默认的入口文件目录从src变成了examples，所以需要新建vue.config.js文件来制定新的入口，内容如下</p>
+<h2 id="4-开始构建自己的组件代码"><a href="#4-开始构建自己的组件代码" class="headerlink" title="4.开始构建自己的组件代码"></a>4.开始构建自己的组件代码</h2><p>按照惯例(我也不知道为啥大家都要这么做)，添加packages目录存放自己的组件代码，修改src目录为examples表明这个目录是用来演示组件是如何使用的，<br>因为我们要打包的仅仅是组件而已。<br>修改src目录前记得先停掉npm serve，不然文件占用无法修改。<br>在packages目录下添加自己的组件目录my-first-components.<br>在my-first-conponents目录下新建src目录，并在src目录下新建my-first-components.vue文件。<br>回到src目录，新建index.js文件用于export这个组件<br>回到packages目录下，新建index.js文件，这个文件负责export所有的组件，因为我们还可以将多个组件一起打包出来<br>还有重要的一点，我们修改的默认的入口文件目录从src变成了examples，所以需要新建vue.config.js文件来制定新的入口，内容如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  // 修改 src 为 examples</span><br><span class="line">  pages: &#123;</span><br><span class="line">    index: &#123;</span><br><span class="line">      entry: &apos;examples/main.js&apos;,</span><br><span class="line">      template: &apos;public/index.html&apos;,</span><br><span class="line">      filename: &apos;index.html&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>到此为止，文件准备工作结束，完整结构如下:</p>
@@ -155,10 +155,10 @@
 <h2 id="11-修改-npmignore-文件，就不需要发布的文件过滤掉"><a href="#11-修改-npmignore-文件，就不需要发布的文件过滤掉" class="headerlink" title="11.修改.npmignore 文件，就不需要发布的文件过滤掉"></a>11.修改.npmignore 文件，就不需要发布的文件过滤掉</h2><p>添加以下目录文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">examples/</span><br><span class="line">packages/</span><br><span class="line">public/</span><br><span class="line">babel.config.js</span><br><span class="line">vue.config.js</span><br></pre></td></tr></table></figure>
 
-<h2 id="12-本地测试npm包"><a href="#12-本地测试npm包" class="headerlink" title="12.本地测试npm包"></a>12.本地测试npm包</h2><p>package.json文件修改完毕之后可以在本地执行命令npm pack，会项目根目录生成一个my-first-components-0.1.0.tgz的压缩包<br>然后在另外一个项目里面安装这个包</p>
+<h2 id="12-本地测试npm包"><a href="#12-本地测试npm包" class="headerlink" title="12.本地测试npm包"></a>12.本地测试npm包</h2><p>package.json文件修改完毕之后可以在本地执行命令npm pack，会在项目根目录生成一个my-first-components-0.1.0.tgz的压缩包<br>然后在另外一个项目里面安装这个包</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install d:\xxx\xxx\my-first-components-0.1.0.tgz</span><br></pre></td></tr></table></figure>
 
-<p>然后在App.vue里面引用这个组件,如果现实正常就说明打包没有错</p>
+<p>然后在App.vue里面引用这个组件,如果显示正常就说明打包没有问题</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123;myFirstComponents&#125; from &apos;my-first-components&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    myFirstComponents</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="13-发布到NPM-server"><a href="#13-发布到NPM-server" class="headerlink" title="13.发布到NPM server"></a>13.发布到NPM server</h2><p>首先需要去<a href="https://www.npmjs.com/" target="_blank" rel="noopener">NPM</a>上注册一个账号，如果已有账号请忽略。<br>然后在组件目录下登录</p>
@@ -167,7 +167,7 @@
 <p>输入用户名密码，然后执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
 
-<p>就可以发布成功，我发布的时候遇到两个问题，第一个错误是npm ERR! 400 Bad Request - PUT <a href="https://registry.npmjs.org/myFirstComponents" target="_blank" rel="noopener">https://registry.npmjs.org/myFirstComponents</a> - “myFirstComponents” is invalid for new packages<br>因为开始的时候我在package.json里面写的name是myFirstComponents，看来npm name不支持这种驼峰的写法，后来换成了”name”: “my-first-components”之后就可以了。<br>第一个错误是npm ERR! publish Failed PUT 403 You do not have permission to publish “npmtest”. Are you logged in as the correct user?<br>这个原因基本都是因为你的npm包的名字被别人注册了，换一个名字就可以了<br>发布之后去NPM server的网站，登录之后看看自己的packages，就能够找到了。</p>
+<p>就可以发布成功，我发布的时候遇到两个问题，第一个错误是npm ERR! 400 Bad Request - PUT <a href="https://registry.npmjs.org/myFirstComponents" target="_blank" rel="noopener">https://registry.npmjs.org/myFirstComponents</a> - “myFirstComponents” is invalid for new packages<br>因为开始的时候我在package.json里面写的name是myFirstComponents，看来npm name不支持这种驼峰的写法，后来换成了”name”: “my-first-components”之后就可以了。<br>第二个错误是npm ERR! publish Failed PUT 403 You do not have permission to publish “npmtest”. Are you logged in as the correct user?<br>这个原因基本都是因为你的npm包的名字被别人注册了，换一个名字就可以了<br>发布之后去NPM server的网站，登录之后看看自己的packages，就能够找到了。</p>
 <h2 id="14-在自己的项目npm安装这个发布的组件"><a href="#14-在自己的项目npm安装这个发布的组件" class="headerlink" title="14. 在自己的项目npm安装这个发布的组件"></a>14. 在自己的项目npm安装这个发布的组件</h2><p>为了在本项目里面引用刚才发布的组件需要将package.json文件里面的name修改一下，不然会提示</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! Refusing to install package with name &quot;my-first-components&quot; under a package</span><br><span class="line">npm ERR! also called &quot;my-first-components&quot;. Did you name your project the same</span><br><span class="line">npm ERR! as the dependency you&apos;re installing?</span><br></pre></td></tr></table></figure>
 
