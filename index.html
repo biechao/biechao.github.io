@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-如何用vue-cli-3-0-打包一个组件并发布到NPM站点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/" class="article-date">
+  <time datetime="2019-08-30T08:21:18.000Z" itemprop="datePublished">2019-08-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/">如何用vue-cli 3.0 打包一个组件并发布到NPM站点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用VUE有一段时间了，但还从来没用过类似iview或者或者elementUI这样的库，一方面样式与公司的不相符，一方面我们公司的页面相对简单。<br>最主要的还是自己写组件的话可以更好的理解和学习VUE，在公司写的组件也不少了，就想着能不能自己也把这些组件发布出来，方便自己以后使用。<br>琢磨了半天，总算发布出去了，这里记录一下发布的过程，怕以后又忘了。</p>
+<h2 id="1-安装nodeJS"><a href="#1-安装nodeJS" class="headerlink" title="1.安装nodeJS"></a>1.安装nodeJS</h2><p>下载nodeJS安装包并按照提示安装，安装之后输入一下命令检查是否安装正确。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">v10.16.4</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-安装vue-cli-3-0-安装之后可以输入vue-–version来检查是否安装正确。"><a href="#2-安装vue-cli-3-0-安装之后可以输入vue-–version来检查是否安装正确。" class="headerlink" title="2.安装vue-cli 3.0,安装之后可以输入vue –version来检查是否安装正确。"></a>2.安装vue-cli 3.0,安装之后可以输入vue –version来检查是否安装正确。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line">vue --version</span><br><span class="line">3.4.1</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-利用vue-create-初始化一个项目"><a href="#3-利用vue-create-初始化一个项目" class="headerlink" title="3.利用vue create 初始化一个项目."></a>3.利用vue create 初始化一个项目.</h2><p>花的时间有点长，耐心等待，要是不想用命令行也可以用UI的方式，vue-cli 3.0居然提供了UI的方式。<a href="https://cli.vuejs.org/zh/guide/creating-a-project.html#%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2" target="_blank" rel="noopener">详情请戳这里</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create hello-word</span><br></pre></td></tr></table></figure>
+
+<p>为了简单方便，命令行使用默认方式安装</p>
+<img src="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/1.png" title="命令行安装">
+<p>安装按成之后运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+
+<p>运行结束之后会看到如下的输出，这个时候就可以通过localhost:8080来访问这个项目了</p>
+<img src="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/2.png" title="启动项目">
+<p>项目初始化的目录结构如下，没错没有webpack.config.js,因为在vue-cli 3.0里面通过vue.config.js文件来设置webpack的相关配置，后面会讲到。</p>
+<img src="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/3.png" title="代码目录">
+<p>到此为止准备工作就算结束了。</p>
+<h2 id="4-开始构建自己的组件代码"><a href="#4-开始构建自己的组件代码" class="headerlink" title="4.开始构建自己的组件代码"></a>4.开始构建自己的组件代码</h2><p>按照惯例(我也不知道为啥大家都要这么做)，添加packages目录存放自己的组件代码，修改src目录为examples表明这个目录是用来演示组件是如何使用的，<br>因为我们要打包的仅仅是组件而已。<br>修改src目录前记得先停掉npm serve，不然文件占用无法修改。<br>在packages目录下添加自己的组件目录my-first-components.<br>在my-first-conponents目录下新建src目录，并在src目录下新建my-first-components.vue文件。<br>回到src目录，新建index.js文件用户export这个组件<br>回到packages目录下，新建index.js文件，这个文件负责export所有的组件，因为我们可以将多个组件一起打包出来<br>还有重要的一点，修改我们修改的默认的入口文件目录从src变成了examples，所以需要新建vue.config.js文件来制定新的入口，内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  // 修改 src 为 examples</span><br><span class="line">  pages: &#123;</span><br><span class="line">    index: &#123;</span><br><span class="line">      entry: &apos;examples/main.js&apos;,</span><br><span class="line">      template: &apos;public/index.html&apos;,</span><br><span class="line">      filename: &apos;index.html&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到此为止，文件准备工作结束，完整结构如下:</p>
+<img src="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/4.png" title="代码目录">
+
+<h2 id="5-my-first-components-vue文件内容"><a href="#5-my-first-components-vue文件内容" class="headerlink" title="5.my-first-components.vue文件内容"></a>5.my-first-components.vue文件内容</h2><p>这里我们只是写一个最基本的组件，只是输出传入的内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&#123;&#123;msg&#125;&#125;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default&#123;</span><br><span class="line">		name:&quot;myFirstComponents&quot;,</span><br><span class="line">		props:&#123;</span><br><span class="line">			msg:String</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-my-first-components目录下index-js的内容"><a href="#6-my-first-components目录下index-js的内容" class="headerlink" title="6.my-first-components目录下index.js的内容"></a>6.my-first-components目录下index.js的内容</h2><p>目的是export这个组件给其他地方引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import myFirstComponents from &apos;./src/my-first-components.vue&apos;</span><br><span class="line">myFirstComponents.install = function (Vue) &#123;</span><br><span class="line">    Vue.component(myFirstComponents.name, myFirstComponents);</span><br><span class="line">&#125;;</span><br><span class="line">export default myFirstComponents</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-packages-目录下index-js的内容"><a href="#7-packages-目录下index-js的内容" class="headerlink" title="7.packages 目录下index.js的内容"></a>7.packages 目录下index.js的内容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 导入所有组件</span><br><span class="line">import myFirstComponents from &apos;./my-first-components/index.js&apos;</span><br><span class="line"></span><br><span class="line">const components = [myFirstComponents]</span><br><span class="line">const install = function(vue) &#123;</span><br><span class="line">  /* istanbul ignore if */</span><br><span class="line">  if (install.installed) return;</span><br><span class="line">  /*eslint-disable*/</span><br><span class="line">  components.map((component) =&gt; &#123;</span><br><span class="line">    vue.component(component.name, component); //component.name 此处使用到组件vue文件中的 name 属性</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line">/* istanbul ignore if */</span><br><span class="line">if (typeof window !== &apos;undefined&apos; &amp;&amp; window.Vue) &#123;</span><br><span class="line">  install(window.Vue);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export &#123;</span><br><span class="line">  install,</span><br><span class="line">  myFirstComponents</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-在app-vue中引用这个组件"><a href="#8-在app-vue中引用这个组件" class="headerlink" title="8.在app.vue中引用这个组件."></a>8.在app.vue中引用这个组件.</h2><p>我们注释掉之前的HelloWord组件，这样UI的输出更清晰然后引入自己的组件，传入自己的字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;img alt=&quot;Vue logo&quot; src=&quot;./assets/logo.png&quot;&gt;</span><br><span class="line">    &lt;!-- &lt;HelloWorld msg=&quot;Welcome to Your Vue.js App&quot;/&gt;--&gt;</span><br><span class="line">    &lt;myFirstComponents msg=&quot;=============================&quot;&gt;&lt;/myFirstComponents&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import HelloWorld from &apos;./components/HelloWorld.vue&apos;</span><br><span class="line">import &#123;myFirstComponents&#125; from &apos;./../packages/index&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    HelloWorld,</span><br><span class="line">    myFirstComponents</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">#app &#123;</span><br><span class="line">  font-family: &apos;Avenir&apos;, Helvetica, Arial, sans-serif;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: #2c3e50;</span><br><span class="line">  margin-top: 60px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>UI上就能看到组件生效了</p>
+<img src="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/5.png" title="渲染效果">
+<h2 id="9-开始打包，添加lib命令"><a href="#9-开始打包，添加lib命令" class="headerlink" title="9.开始打包，添加lib命令"></a>9.开始打包，添加lib命令</h2><p>在package.json中添加如下脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;script&quot;: &#123;</span><br><span class="line">	&quot;lib&quot;: &quot;vue-cli-service build --target lib --name myFirstComponents --dest lib packages/index.js&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run lib</span><br></pre></td></tr></table></figure>
+
+<p>build之后的结果如下</p>
+<img src="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/6.png" title="打包结果">
+<h2 id="10-修改package-json准备上传到NPM-server"><a href="#10-修改package-json准备上传到NPM-server" class="headerlink" title="10.修改package.json准备上传到NPM server"></a>10.修改package.json准备上传到NPM server</h2><ul>
+<li>name: 包名，该名字是唯一的。可在 npm 官网搜索名字，如果存在则需换个名字。</li>
+<li>version: 版本号，每次发布至 npm 需要修改版本号，不能和历史版本号相同。</li>
+<li>description: 描述。</li>
+<li>main: 入口文件，该字段需指向我们最终编译后的包文件。</li>
+<li>keyword：关键字，以空格分离希望用户最终搜索的词。</li>
+<li>author：作者</li>
+<li>private：是否私有，需要修改为 false 才能发布到 npm</li>
+<li>license： 开源协议<br>这里我们添加的内容如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;name&quot;: &quot;my-first-components&quot;,</span><br><span class="line">&quot;version&quot;: &quot;0.1.0&quot;,</span><br><span class="line">&quot;private&quot;: false,</span><br><span class="line">&quot;description&quot;: &quot;first vue componets test&quot;,</span><br><span class="line">&quot;main&quot;: &quot;lib/myFirstComponents.umd.js&quot;,</span><br><span class="line">&quot;keyword&quot;: &quot;&quot;,</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="11-修改-npmignore-文件，就不需要发布的文件过滤掉"><a href="#11-修改-npmignore-文件，就不需要发布的文件过滤掉" class="headerlink" title="11.修改.npmignore 文件，就不需要发布的文件过滤掉"></a>11.修改.npmignore 文件，就不需要发布的文件过滤掉</h2><p>添加以下目录文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">examples/</span><br><span class="line">packages/</span><br><span class="line">public/</span><br><span class="line">babel.config.js</span><br><span class="line">vue.config.js</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-本地测试npm包"><a href="#12-本地测试npm包" class="headerlink" title="12.本地测试npm包"></a>12.本地测试npm包</h2><p>package.json文件修改完毕之后可以在本地执行命令npm pack，会项目根目录生成一个my-first-components-0.1.0.tgz的压缩包<br>然后在另外一个项目里面安装这个包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install d:\xxx\xxx\my-first-components-0.1.0.tgz</span><br></pre></td></tr></table></figure>
+
+<p>然后在App.vue里面引用这个组件,如果现实正常就说明打包没有错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import &#123;myFirstComponents&#125; from &apos;my-first-components&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    myFirstComponents</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="13-发布到NPM-server"><a href="#13-发布到NPM-server" class="headerlink" title="13.发布到NPM server"></a>13.发布到NPM server</h2><p>首先需要去<a href="https://www.npmjs.com/" target="_blank" rel="noopener">NPM</a>上注册一个账号，如果已有账号请忽略。<br>然后在组件目录下登录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm login</span><br></pre></td></tr></table></figure>
+
+<p>输入用户名密码，然后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
+
+<p>就可以发布成功，我发布的时候遇到两个问题，第一个错误是npm ERR! 400 Bad Request - PUT <a href="https://registry.npmjs.org/myFirstComponents" target="_blank" rel="noopener">https://registry.npmjs.org/myFirstComponents</a> - “myFirstComponents” is invalid for new packages<br>因为开始的时候我在package.json里面写的name是myFirstComponents，看来npm name不支持这种驼峰的写法，后来换成了”name”: “my-first-components”之后就可以了。<br>第一个错误是npm ERR! publish Failed PUT 403 You do not have permission to publish “npmtest”. Are you logged in as the correct user?<br>这个原因基本都是因为你的npm包的名字被别人注册了，换一个名字就可以了<br>发布之后去NPM server的网站，登录之后看看自己的packages，就能够找到了。</p>
+<h2 id="14-在自己的项目npm安装这个发布的组件"><a href="#14-在自己的项目npm安装这个发布的组件" class="headerlink" title="14. 在自己的项目npm安装这个发布的组件"></a>14. 在自己的项目npm安装这个发布的组件</h2><p>为了在本项目里面引用刚才发布的组件需要将package.json文件里面的name修改一下，不然会提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm ERR! Refusing to install package with name &quot;my-first-components&quot; under a package</span><br><span class="line">npm ERR! also called &quot;my-first-components&quot;. Did you name your project the same</span><br><span class="line">npm ERR! as the dependency you&apos;re installing?</span><br></pre></td></tr></table></figure>
+
+<p>比如将name修改为”name”: “my-first-components-test”，然后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install my-first-components</span><br></pre></td></tr></table></figure>
+
+<p>然后在项目的App.vue里面修改引用方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123;myFirstComponents&#125; from &apos;./../packages/index&apos; //以前是这样的写法，现在修改为下面的写法</span><br><span class="line">import &#123;myFirstComponents&#125; from &apos;my-first-components&apos;//新的引入方式</span><br></pre></td></tr></table></figure>
+
+<p>然后执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+
+<p>如果能够正常显示，说明组件发布成功啦。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/" data-id="cjzxurtm80000yotpqq9nxae8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-cli-3-0-NPM/">vue-cli 3.0 NPM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-cli-3-0-NPM/">vue-cli 3.0 NPM</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/vue-cli-3-0-NPM/" style="font-size: 10px;">vue-cli 3.0 NPM</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/">如何用vue-cli 3.0 打包一个组件并发布到NPM站点</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
