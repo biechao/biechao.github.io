@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>如何使用vue-my-datepicker | 毛毛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="This blog describes how to use vue-my-datepicker components. Install123npm install vue-my-datepicker or &amp;lt;script src=&amp;quot;vueMyDatepicker.umd.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;link rel=&amp;quot;styleshee">
+<meta name="keywords" content="vue datetimepicker datepicker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何使用vue-my-datepicker">
+<meta property="og:url" content="http://yoursite.com/2019/09/17/如何使用vue-my-datepicker/index.html">
+<meta property="og:site_name" content="毛毛">
+<meta property="og:description" content="This blog describes how to use vue-my-datepicker components. Install123npm install vue-my-datepicker or &amp;lt;script src=&amp;quot;vueMyDatepicker.umd.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;link rel=&amp;quot;styleshee">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-18T02:45:50.044Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何使用vue-my-datepicker">
+<meta name="twitter:description" content="This blog describes how to use vue-my-datepicker components. Install123npm install vue-my-datepicker or &amp;lt;script src=&amp;quot;vueMyDatepicker.umd.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;link rel=&amp;quot;styleshee">
+  
+    <link rel="alternate" href="/atom.xml" title="毛毛" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/user.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/vueMyDatepicker.css" media="screen" type="text/css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">毛毛</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-如何使用vue-my-datepicker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/17/如何使用vue-my-datepicker/" class="article-date">
+  <time datetime="2019-09-17T08:47:18.000Z" itemprop="datePublished">2019-09-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何使用vue-my-datepicker
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This blog describes how to use <a href="https://www.npmjs.com/package/vue-my-datepicker" target="_blank" rel="noopener">vue-my-datepicker</a> components.</p>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-my-datepicker or </span><br><span class="line">&lt;script src=&quot;vueMyDatepicker.umd.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;vueMyDatepicker.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Not support yarn add for now.</p>
+<h2 id="Use-in-vue-project"><a href="#Use-in-vue-project" class="headerlink" title="Use in vue project"></a>Use in vue project</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123;vueMyDatepicker&#125; from &apos;vue-my-datepicker&apos;</span><br><span class="line">import &apos;vue-my-datepicker/lib/vueMyDatepicker.css&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    vueMyDatepicker</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="parameters"><a href="#parameters" class="headerlink" title="parameters"></a>parameters</h2><table class="custom">
+    <thead>
+        <th>Props/methods</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>timeRange</td>
+            <td>Int</td>
+            <td>2</td>
+            <td>The default timerange you want to selected</td>
+        </tr>
+        <tr>
+            <td>reloadFlag</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>Use to reload the components, only useful for serve mode</td>
+        </tr>
+        <tr>
+            <td>dataTimeLabelPosition</td>
+            <td>String</td>
+            <td>right</td>
+            <td>The position of the custom timerange panel, can set to left</td>
+        </tr>
+        <tr>
+            <td>initStart</td>
+            <td>String</td>
+            <td>null</td>
+            <td>The default start time, only used for serve mode, the format will be ISO format: "2019-09-18 16:55:12"</td>
+        </tr>
+        <tr>
+            <td>initEnd</td>
+            <td>String</td>
+            <td>null</td>
+            <td>The default end time, only used for serve mode, the format will be ISO format: "2019-09-17 16:55:12"</td>
+        </tr>
+        <tr>
+            <td>useLocalTime</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>Whether use local time, if use local time,the start time and end time will be caculate within components with javascript.<br>
+                Set it to false to use serve mode, then you need to get start time and end time from backend server.
+            </td>
+        </tr>
+        <tr>
+            <td>select-time-range</td>
+            <td>function</td>
+            <td>N/A</td>
+            <td>
+                When user change the timerange inside the component, then this function will return start time and end time to user.
+            </td>
+        </tr>
+        <tr>
+            <td>change-time-range</td>
+            <td>function</td>
+            <td>N/A</td>
+            <td>
+                Only use for serve mode, if user change time range inside component, this function will return current timerange to user to <br>get start time and end time from bakend server.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h2><script type="text/javascript" src="/js/vue.js"></script>
+<script type="text/javascript" src="/js/vueMyDatepicker.umd.js"></script>
+<h3 id="1-Use-local-time-mode"><a href="#1-Use-local-time-mode" class="headerlink" title="1.Use local time mode"></a>1.Use local time mode</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	el:&quot;#app_local&quot;,</span><br><span class="line">	data:function()&#123;</span><br><span class="line">		return&#123;</span><br><span class="line">			local_param:&#123;</span><br><span class="line">			    timeRange: 1     </span><br><span class="line">			&#125;    				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods:&#123;</span><br><span class="line">	    customerSelectTimeRange(time_range)&#123;</span><br><span class="line">	      console.log(time_range);//&#123;start: &quot;2019-09-17 10:26:18&quot;, end: &quot;2019-09-18 10:26:18&quot;&#125;</span><br><span class="line">	      //do whatever you want here when you get the start_time and end_time here</span><br><span class="line">	    &#125;,    			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+<div id="app_local">
+    <vue-my-datepicker :param="local_param" v-on:select-time-range="customerSelectTimeRange"></vue-my-datepicker>
+</div>
+<br>
+<br>
+
+<h3 id="2-Use-local-time-with-left-panel"><a href="#2-Use-local-time-with-left-panel" class="headerlink" title="2.Use local time with left panel"></a>2.Use local time with left panel</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	el:&quot;#app_local&quot;,</span><br><span class="line">	data:function()&#123;</span><br><span class="line">		return&#123;</span><br><span class="line">			local_param:&#123;</span><br><span class="line">			    timeRange: 1,</span><br><span class="line">			    dataTimeLabelPosition: &apos;left&apos;,</span><br><span class="line"></span><br><span class="line">			&#125;    				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods:&#123;</span><br><span class="line">	    customerSelectTimeRange(time_range)&#123;</span><br><span class="line">	      console.log(time_range);//&#123;start: &quot;2019-09-17 10:26:18&quot;, end: &quot;2019-09-18 10:26:18&quot;&#125;</span><br><span class="line">	      //do whatever you want here when you get the start_time and end_time here</span><br><span class="line">	    &#125;,    			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+<div id="app_local_left" style="float: right;">
+    <vue-my-datepicker :param="local_param" v-on:select-time-range="customerSelectTimeRange"></vue-my-datepicker>
+</div>
+
+<br>
+<br>
+
+<h3 id="3-Use-serve-time-mode"><a href="#3-Use-serve-time-mode" class="headerlink" title="3.Use serve time mode"></a>3.Use serve time mode</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	el:&quot;#app_serve&quot;,</span><br><span class="line">	data:function()&#123;</span><br><span class="line">		return&#123;</span><br><span class="line">			sever_param:&#123;</span><br><span class="line">				timeRange: 3,</span><br><span class="line">				reloadFlag: false,</span><br><span class="line">				initStart:&quot;2019-09-16 01:43:10&quot;,</span><br><span class="line">				initEnd:&quot;2019-09-16 05:43:10&quot;,</span><br><span class="line">				useLocalTime:false      </span><br><span class="line">			&#125;,    				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods:&#123;</span><br><span class="line">	    serverSelectTimeRange(time_range)&#123;</span><br><span class="line">	      console.log(time_range);//when use select custom timerange will trigger this function</span><br><span class="line">	    &#125;,</span><br><span class="line">	    changeTimeRange(time_range_value)&#123;</span><br><span class="line">	      /*var _vue = this;</span><br><span class="line">	      	$.get(&apos;/API/to/get/datatime/from/backend&apos;,data:&#123;timerange:time_range_value&#125;,function(data)&#123;</span><br><span class="line">		      	_vue.sever_param.initStart = data.start_time;</span><br><span class="line">		        _vue.sever_param.initEnd = data.start_time;</span><br><span class="line">		        _vue.reloadTimeRange();</span><br><span class="line">	      	&#125;)*/</span><br><span class="line"></span><br><span class="line">	      //this is just fake data for demo, you shound use above code to get datetime from backend server.</span><br><span class="line">	      this.sever_param.timeRange = time_range_value;//update timeRange in param</span><br><span class="line">	      if(time_range_value == 1)&#123;</span><br><span class="line">	        this.sever_param.initStart = &quot;2019-09-16 01:43:10&quot;;</span><br><span class="line">	        this.sever_param.initEnd = &quot;2019-09-16 05:43:10&quot;;</span><br><span class="line">	        this.reloadTimeRange();</span><br><span class="line">	      &#125;else if(time_range_value == 2)&#123;</span><br><span class="line">	        this.sever_param.initStart = &quot;2019-09-15 05:43:10&quot;;</span><br><span class="line">	        this.sever_param.initEnd = &quot;2019-09-16 05:43:10&quot;;</span><br><span class="line">	        this.reloadTimeRange();</span><br><span class="line">	      &#125;else if(time_range_value == 3)&#123;</span><br><span class="line">	        this.sever_param.initStart = &quot;2019-09-19 00:00:00&quot;;</span><br><span class="line">	        this.sever_param.initEnd = &quot;2019-09-16 05:43:10&quot;;</span><br><span class="line">	        this.reloadTimeRange();        </span><br><span class="line">	      &#125;else if(time_range_value == 4)&#123;</span><br><span class="line">	        this.sever_param.initStart = &quot;2019-08-16 00:00:00&quot;;</span><br><span class="line">	        this.sever_param.initEnd = &quot;2019-09-16 05:43:10&quot;;</span><br><span class="line">	        this.reloadTimeRange();        </span><br><span class="line">	      &#125;else if(time_range_value == 5)&#123;</span><br><span class="line">	        this.sever_param.initStart = &quot;2019-06-16 00:00:00&quot;;</span><br><span class="line">	        this.sever_param.initEnd = &quot;2019-09-16 05:43:10&quot;;</span><br><span class="line">	        this.reloadTimeRange();        </span><br><span class="line">	      &#125;</span><br><span class="line">	    &#125;,</span><br><span class="line">	    reloadTimeRange()&#123;</span><br><span class="line">	    	this.sever_param.reloadFlag = !this.sever_param.reloadFlag;</span><br><span class="line">	    &#125;   			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<div id="app_serve">
+    <vue-my-datepicker :param="sever_param" v-on:select-time-range="serverSelectTimeRange" v-on:change-time-range="changeTimeRange"></vue-my-datepicker>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script type="text/javascript" src="/js/demo.js"></script>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/17/如何使用vue-my-datepicker/" data-id="ck0nmgwy60000rstpx74apvls" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-datetimepicker-datepicker/">vue datetimepicker datepicker</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">如何用vue-cli 3.0 打包一个组件并发布到NPM站点</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-datetimepicker-datepicker/">vue datetimepicker datepicker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-cli-3-0-NPM/">vue-cli 3.0 NPM</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/vue-datetimepicker-datepicker/" style="font-size: 10px;">vue datetimepicker datepicker</a> <a href="/tags/vue-cli-3-0-NPM/" style="font-size: 10px;">vue-cli 3.0 NPM</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/17/如何使用vue-my-datepicker/">如何使用vue-my-datepicker</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/30/如何用vue-cli-3-0-打包一个组件并发布到NPM站点/">如何用vue-cli 3.0 打包一个组件并发布到NPM站点</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
