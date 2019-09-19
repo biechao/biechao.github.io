@@ -75,3 +75,37 @@ new Vue({
 	    }   			
 	}
 });
+
+new Vue({
+	el:"#app_zh_CN",
+	data:function(){
+		return{
+			local_param:{
+			    timeRange: 2,
+			    locale:"zh_CN"    
+			}    				
+		}
+	},
+	methods:{
+	    customerSelectTimeRange(time_range){
+	      console.log(time_range);
+	    },    			
+	}
+});
+
+new Vue({
+	el:"#app_ja_JP",
+	data:function(){
+		return{
+			local_param:{
+			    timeRange: 4,
+			    locale:"ja_JP"  
+			}    				
+		}
+	},
+	methods:{
+	    customerSelectTimeRange(time_range){
+	      console.log(time_range);
+	    },    			
+	}
+});

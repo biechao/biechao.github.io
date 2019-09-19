@@ -139,6 +139,13 @@
             </td>
         </tr>
         <tr>
+            <td>locale</td>
+            <td>String</td>
+            <td>en_US</td>
+            <td>The language of this component, support en_US/zh_CN/ja_JP
+            </td>
+        </tr>        
+        <tr>
             <td>select-time-range</td>
             <td>function</td>
             <td>N/A</td>
@@ -186,9 +193,30 @@
 <div id="app_serve">
     <vue-my-datepicker :param="sever_param" v-on:select-time-range="serverSelectTimeRange" v-on:change-time-range="changeTimeRange"></vue-my-datepicker>
 </div>
+<br>
+<br>
+
+<h3 id="4-Use-zh-CN-locale"><a href="#4-Use-zh-CN-locale" class="headerlink" title="4.Use zh_CN locale"></a>4.Use zh_CN locale</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	el:&quot;#app_local&quot;,</span><br><span class="line">	data:function()&#123;</span><br><span class="line">		return&#123;</span><br><span class="line">			local_param:&#123;</span><br><span class="line">			    timeRange: 2,</span><br><span class="line">			    locale:&quot;zh_CN&quot;     </span><br><span class="line">			&#125;    				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods:&#123;</span><br><span class="line">	    customerSelectTimeRange(time_range)&#123;</span><br><span class="line">	      console.log(time_range);//&#123;start: &quot;2019-09-17 10:26:18&quot;, end: &quot;2019-09-18 10:26:18&quot;&#125;</span><br><span class="line">	      //do whatever you want here when you get the start_time and end_time here</span><br><span class="line">	    &#125;,    			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
+<div id="app_zh_CN">
+    <vue-my-datepicker :param="local_param" v-on:select-time-range="customerSelectTimeRange"></vue-my-datepicker>
+</div>
+<br>
+<br>
+
+
+<h3 id="5-Use-ja-JP-locale"><a href="#5-Use-ja-JP-locale" class="headerlink" title="5.Use ja_JP locale"></a>5.Use ja_JP locale</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	el:&quot;#app_local&quot;,</span><br><span class="line">	data:function()&#123;</span><br><span class="line">		return&#123;</span><br><span class="line">			local_param:&#123;</span><br><span class="line">			    timeRange: 4.</span><br><span class="line">			    locale:&quot;ja_JP&quot;     </span><br><span class="line">			&#125;    				</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods:&#123;</span><br><span class="line">	    customerSelectTimeRange(time_range)&#123;</span><br><span class="line">	      console.log(time_range);//&#123;start: &quot;2019-09-17 10:26:18&quot;, end: &quot;2019-09-18 10:26:18&quot;&#125;</span><br><span class="line">	      //do whatever you want here when you get the start_time and end_time here</span><br><span class="line">	    &#125;,    			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<div id="app_ja_JP">
+    <vue-my-datepicker :param="local_param" v-on:select-time-range="customerSelectTimeRange"></vue-my-datepicker>
+</div>
+<br>
+<br>
+
 <br>
 <br>
 <br>
