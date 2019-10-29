@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/user.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/vueMyDatepicker.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/vueMyTable.css" media="screen" type="text/css">
 </head>
 </html>
 <body>
@@ -63,6 +64,180 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-how to use vue-my-table" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/29/how to use vue-my-table/" class="article-date">
+  <time datetime="2019-10-29T03:47:18.000Z" itemprop="datePublished">2019-10-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/29/how to use vue-my-table/">How to use vue-my-table</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This blog describes how to use <a href="https://www.npmjs.com/package/vue-my-table" target="_blank" rel="noopener">vue-my-table</a> components.</p>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-my-table or </span><br><span class="line">&lt;script src=&quot;vueMyTable.umd.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;vueMyTable.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Not support yarn add for now.</p>
+<h2 id="Use-in-vue-project"><a href="#Use-in-vue-project" class="headerlink" title="Use in vue project"></a>Use in vue project</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123;vueMyTable&#125; from &apos;vue-my-table&apos;</span><br><span class="line">import &apos;vue-my-table/lib/vueMyTable.css&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &apos;app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    vueMyTable</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="parameters"><a href="#parameters" class="headerlink" title="parameters"></a>parameters</h2><p>Object for param</p>
+<table class="custom">
+    <thead>
+        <th>Props/methods</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>columns</td>
+            <td>Array</td>
+            <td></td>
+            <td>Column of the table, please refer to this <a href="#columns">table</a></td>
+        </tr>
+        <tr>
+            <td>sortColumn</td>
+            <td>String</td>
+            <td>-</td>
+            <td>Default sort column name</td>
+        </tr>
+        <tr>
+            <td>sortOrder</td>
+            <td>String</td>
+            <td>-</td>
+            <td>Default sort type 'asc' or 'desc'</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>Int</td>
+            <td>-</td>
+            <td>If set height to the table, the header will be fixed and scrollbar will be shown in body of the table.</td>
+        </tr>
+        <tr>
+            <td>detailRowComponentName</td>
+            <td>String</td>
+            <td>-</td>
+            <td>component for the expand detail row</td>
+        </tr>
+        <tr>
+            <td>Striped</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>Striped table makes it easier to distinguish different rows, false by default</td>
+        </tr>                
+    </tbody>
+</table>
+
+<p><span id="columns">Object for columns</span></p>
+<table class="custom">
+    <thead>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>index</td>
+            <td>String</td>
+            <td>-</td>
+            <td>index name for the tr in table, it should be a key in json data, such as 'id'</td>
+        </tr>
+        <tr>
+            <td>isCheckbox</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>Show checkbox in the column, if it is set to true, there is no need to set value for the other parameters</td>
+        </tr>
+        <tr>
+            <td>isDetailRow</td>
+            <td>Boolean</td>
+            <td>-</td>
+            <td>Show expand icon in the column, if it is set to true, there is no need to set value for the other parameters</td>
+        </tr>
+        <tr>
+            <td>label</td>
+            <td>String</td>
+            <td>-</td>
+            <td>header of the column</td>
+        </tr>
+        <tr>
+            <td>sortable</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>Support sort for this column</td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>Int</td>
+            <td>-</td>
+            <td>width for this column, it is percent, not PX</td>
+        </tr>
+        <tr>
+            <td>callback</td>
+            <td>function</td>
+            <td>-</td>
+            <td>if set callback for this column, the content of this column will be return value of the callback function, <br>and the html tag will be render in the return value, so to prevent XSS injection, make sure the html tags such as '<' and '>' have been escaped before return.</'></td>
+        </tr>
+        <tr>
+            <td>component_name</td>
+            <td>String</td>
+            <td>-</td>
+            <td>If callback can not match your requirement, you can pass a component to the column and do anything you want in this component</td>
+        </tr>                                                                    
+    </tbody>
+</table>
+
+<h2 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h2><script type="text/javascript" src="/js/vue.js"></script>
+<script type="text/javascript" src="/js/vueMyTable.umd.js"></script>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	el:&quot;#app&quot;,</span><br><span class="line">	  data:function()&#123;</span><br><span class="line">	    return &#123;</span><br><span class="line">	      param:&#123;</span><br><span class="line">	        columns:[</span><br><span class="line">	          &#123;</span><br><span class="line">	            index:&quot;id&quot;,isCheckbox:true</span><br><span class="line">	          &#125;,</span><br><span class="line">	          &#123;</span><br><span class="line">	            index:&quot;id&quot;,isDetailRow:true</span><br><span class="line">	          &#125;,</span><br><span class="line">	          &#123;</span><br><span class="line">	            index:&quot;name&quot;,label:&quot;Name&quot;,sortable:true,width:30</span><br><span class="line">	          &#125;,</span><br><span class="line">	          &#123;</span><br><span class="line">	            index:&quot;sender&quot;,label:&quot;Sender&quot;,sortable:true,width:30,callback:this.formatSender</span><br><span class="line">	          &#125;,</span><br><span class="line">	          &#123;</span><br><span class="line">	            index:&quot;comments&quot;,label:&quot;comments&quot;,sortable:false,width:38,component_name:&quot;comments&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	        ],</span><br><span class="line">	        dataSet:[</span><br><span class="line">	          &#123;</span><br><span class="line">	            id:1,name:&quot;aaa&quot;,sender:&quot;aaa@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;,</span><br><span class="line">	          &#123;</span><br><span class="line">	            id:2,name:&quot;bbb&quot;,sender:&quot;bbb@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;,</span><br><span class="line">	          &#123;</span><br><span class="line">	            id:4,name:&quot;ccc&quot;,sender:&quot;ccc@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:4,name:&quot;ddd&quot;,sender:&quot;ddd@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:5,name:&quot;eee&quot;,sender:&quot;eee@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:6,name:&quot;fff&quot;,sender:&quot;fff@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:7,name:&quot;ggg&quot;,sender:&quot;ggg@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:9,name:&quot;hhh&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:10,name:&quot;iii&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:11,name:&quot;jjj&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:12,name:&quot;kkk&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:13,name:&quot;lll&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:14,name:&quot;mmm&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:15,name:&quot;nnn&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:16,name:&quot;ooo&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:17,name:&quot;ppp&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	          ,&#123;</span><br><span class="line">	            id:18,name:&quot;qqq&quot;,sender:&quot;hhh@domain.com&quot;,&quot;comments&quot;:&quot;this is a test&quot;</span><br><span class="line">	          &#125;</span><br><span class="line">	        ],</span><br><span class="line">	        sortOrder:&quot;asc&quot;,</span><br><span class="line">	        sortColumn:&quot;name&quot;,</span><br><span class="line">	        height:300,</span><br><span class="line">	        detailRowComponentName:&quot;col-detail&quot;,</span><br><span class="line">	        stripe:true  </span><br><span class="line">	      &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	  &#125;,</span><br><span class="line">	methods:&#123;</span><br><span class="line">	    reloadTable:function()&#123;</span><br><span class="line">	      this.local_param.reloadFlag = !this.local_param.reloadFlag;</span><br><span class="line">	    &#125;,</span><br><span class="line">	    formatSender:function(cell_value,row)&#123;</span><br><span class="line">	      return &apos;&lt;b style=&quot;color:red;&quot;&gt;&apos;+cell_value+&apos;&lt;/b&gt;&apos;;</span><br><span class="line">	    &#125;   			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+<div id="app">
+    <vue-my-table :param="param"></vue-my-table>
+</div>
+<br>
+<br>
+
+
+<script type="text/javascript" src="/js/table_demo.js"></script>
+<style type="text/css">
+    .vue-my-table table .vue-checkbox .checkbox.partial .checkbox_span:after{
+        right: 5px;
+    }
+</style>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/29/how to use vue-my-table/" data-id="ck2b7zrkz0000pgtpfpdc2j56" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-table/">vue table</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-how to use vue-my-datepicker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -392,7 +567,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-datetimepicker-datepicker/">vue datetimepicker datepicker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-cli-3-0-NPM/">vue-cli 3.0 NPM</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-datetimepicker-datepicker/">vue datetimepicker datepicker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-table/">vue table</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue-cli-3-0-NPM/">vue-cli 3.0 NPM</a></li></ul>
     </div>
   </div>
 
@@ -402,7 +577,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/vue-datetimepicker-datepicker/" style="font-size: 10px;">vue datetimepicker datepicker</a> <a href="/tags/vue-cli-3-0-NPM/" style="font-size: 10px;">vue-cli 3.0 NPM</a>
+      <a href="/tags/vue-datetimepicker-datepicker/" style="font-size: 10px;">vue datetimepicker datepicker</a> <a href="/tags/vue-table/" style="font-size: 10px;">vue table</a> <a href="/tags/vue-cli-3-0-NPM/" style="font-size: 10px;">vue-cli 3.0 NPM</a>
     </div>
   </div>
 
@@ -411,7 +586,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
     </div>
   </div>
 
@@ -422,6 +597,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/10/29/how to use vue-my-table/">How to use vue-my-table</a>
+          </li>
         
           <li>
             <a href="/2019/09/17/how to use vue-my-datepicker/">How to use vue-my-datepicker</a>
